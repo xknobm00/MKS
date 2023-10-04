@@ -1,4 +1,5 @@
 /* USER CODE BEGIN Header */
+
 /**
   ******************************************************************************
   * @file           : main.h
@@ -50,7 +51,7 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-
+extern volatile uint32_t Tick;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
@@ -75,6 +76,7 @@ void Error_Handler(void);
 #define B1_GPIO_Port GPIOC
 #define S2_Pin LL_GPIO_PIN_0
 #define S2_GPIO_Port GPIOC
+#define S2_EXTI_IRQn EXTI0_1_IRQn
 #define S1_Pin LL_GPIO_PIN_1
 #define S1_GPIO_Port GPIOC
 #define USART_TX_Pin LL_GPIO_PIN_2
