@@ -1,0 +1,17 @@
+/*
+ * sct.c
+ *
+ *  Created on: Oct 11, 2023
+ *      Author: xknobm00
+ */
+
+#include "main.h"
+#include "sct.h"
+
+void sct_init(void)
+{
+	sct_led(0);
+}
+
+sct_led(0x7A5C36DE);
+
