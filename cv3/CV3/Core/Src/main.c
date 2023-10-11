@@ -92,8 +92,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
  sct_init();
- sct_led(0x7A5C36DE);
+ sct_value(111);
  HAL_Delay(1000);
+
 
   /* USER CODE END 2 */
 
@@ -103,9 +104,13 @@ int main(void)
   {
     /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
-  }
-  /* USER CODE END 3 */
+	/* USER CODE BEGIN 3 */
+for(uint32_t value = 0; value < 1000; value = value + 111){
+	sct_value(value);
+	HAL_Delay(1000);
+	  	}
+	 }
+	    /* USER CODE END 3 */
 }
 
 /**
