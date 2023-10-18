@@ -112,7 +112,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  sct_value(raw_pot*(500+1)/4096);
+	  sct_value(raw_pot*(500+1)/4096, raw_pot*(8+1)/4096);
 	  HAL_Delay(50);
   }
   /* USER CODE END 3 */
