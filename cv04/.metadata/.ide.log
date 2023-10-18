@@ -1182,3 +1182,4 @@
 2023-10-18 17:15:40,886 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 1mS.
 2023-10-18 17:15:40,888 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
 2023-10-18 17:15:59,041 [INFO] Gpio:273 - dependency for GPIO [ADC, RCC, SYS, USART2]
+2023-10-18 18:05:59,653 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
