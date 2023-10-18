@@ -1,0 +1,10 @@
+17:54:35 **** Incremental Build of configuration Debug for project cv2 ****
+make -j4 all 
+arm-none-eabi-size   cv2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2664	     12	   1588	   4264	   10a8	cv2.elf
+Finished building: default.size.stdout
+ 
+
+17:54:35 Build Finished. 0 errors, 0 warnings. (took 264ms)
+
