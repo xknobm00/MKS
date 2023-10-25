@@ -83,35 +83,44 @@ static void uart_process_command(char *cmd)
 		if (strcasecmp(token, "ON") == 0) HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin,1);
 		else if (strcasecmp(token, "OFF") == 0) HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin,0);
 		printf("OK\n");
-		}
+	}
+
+	else if (strcasecmp(token, "all_LED") == 0) {
+		token = strtok(NULL, " ");
+		if (strcasecmp(token, "ON") == 0) HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin,1), HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin,1);
+		else if (strcasecmp(token, "OFF") == 0) HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin,0), HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin,0);
+		printf("OK\n");
+	}
+
+
 
 	else if (strcasecmp(token, "STATUS") == 0) {
-		printf("LED1: %3s ; ", HAL_GPIO_ReadPin(LED1_GPIO_Port, LED1_Pin) ? "ON": "OFF");
-		printf("LED2: %3s\n", HAL_GPIO_ReadPin(LED2_GPIO_Port, LED2_Pin) ? "ON": "OFF");
-		}
+		printf("LED1: %s ; ", HAL_GPIO_ReadPin(LED1_GPIO_Port, LED1_Pin) ? "ON": "OFF");
+		printf("LED2: %s\n", HAL_GPIO_ReadPin(LED2_GPIO_Port, LED2_Pin) ? "ON": "OFF");
+	}
 
 }
 
 
 int _write(int file, char const *buf, int n)
 {
- /* stdout redirection to UART2 */
- HAL_UART_Transmit(&huart2, (uint8_t*)(buf), n, HAL_MAX_DELAY);
- return n;
+	/* stdout redirection to UART2 */
+	HAL_UART_Transmit(&huart2, (uint8_t*)(buf), n, HAL_MAX_DELAY);
+	return n;
 }
 
 
 static void uart_byte_available(uint8_t c)
 {
-	 static uint16_t cnt;
-	 static char data[CMD_BUFFER_LEN];
+	static uint16_t cnt;
+	static char data[CMD_BUFFER_LEN];
 
-	 if (cnt < CMD_BUFFER_LEN && c >= 32 && c <= 126) data[cnt++] = c;
-	 if ((c == '\n' || c == '\r') && cnt > 0) {
-	 data[cnt] = '\0';
-	 uart_process_command(data);
-	 cnt = 0;
-	 }
+	if (cnt < CMD_BUFFER_LEN && c >= 32 && c <= 126) data[cnt++] = c;
+	if ((c == '\n' || c == '\r') && cnt > 0) {
+		data[cnt] = '\0';
+		uart_process_command(data);
+		cnt = 0;
+	}
 }
 
 /* USER CODE END 0 */
