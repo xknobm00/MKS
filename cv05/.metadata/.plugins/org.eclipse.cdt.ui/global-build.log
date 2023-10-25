@@ -316,3 +316,167 @@ Finished building: default.size.stdout
  
 Finished building: cv5.list
  
+16:36:44 **** Incremental Build of configuration Debug for project cv5 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_hal_msp.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_hal_msp.d" -MT"Core/Src/stm32f0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_it.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_it.d" -MT"Core/Src/stm32f0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_it.o"
+arm-none-eabi-gcc -o "cv5.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\xknobm00\MKS\MKS\cv05\cv5\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv5.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv5.elf
+ 
+arm-none-eabi-size   cv5.elf 
+arm-none-eabi-objdump -h -S  cv5.elf  > "cv5.list"
+   text	   data	    bss	    dec	    hex	filename
+  14044	    112	   2432	  16588	   40cc	cv5.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv5.list
+ 
+16:43:42 **** Incremental Build of configuration Debug for project cv5 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv5.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\xknobm00\MKS\MKS\cv05\cv5\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv5.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv5.elf
+ 
+arm-none-eabi-size   cv5.elf 
+arm-none-eabi-objdump -h -S  cv5.elf  > "cv5.list"
+   text	   data	    bss	    dec	    hex	filename
+  15276	    112	   2432	  17820	   459c	cv5.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv5.list
+ 
+16:50:46 **** Incremental Build of configuration Debug for project cv5 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'uart_process_command':
+../Core/Src/main.c:76:50: error: expected ')' before 'HAL_GPIO_WritePin'
+   76 |                 else if (strcasecmp(token, "OFF") HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin,1);
+      |                         ~                        ^~~~~~~~~~~~~~~~~~
+      |                                                  )
+../Core/Src/main.c:78:9: error: expected expression before '}' token
+   78 |         }
+      |         ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:56:28 **** Incremental Build of configuration Debug for project cv5 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv5.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\xknobm00\MKS\MKS\cv05\cv5\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv5.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv5.elf
+ 
+arm-none-eabi-size   cv5.elf 
+arm-none-eabi-objdump -h -S  cv5.elf  > "cv5.list"
+   text	   data	    bss	    dec	    hex	filename
+  15416	    112	   2432	  17960	   4628	cv5.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv5.list
+ 
+16:57:24 **** Incremental Build of configuration Debug for project cv5 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv5.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\xknobm00\MKS\MKS\cv05\cv5\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv5.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv5.elf
+ 
+arm-none-eabi-size   cv5.elf 
+arm-none-eabi-objdump -h -S  cv5.elf  > "cv5.list"
+   text	   data	    bss	    dec	    hex	filename
+  15416	    112	   2432	  17960	   4628	cv5.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv5.list
+ 
+16:59:39 **** Incremental Build of configuration Debug for project cv5 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv5.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\xknobm00\MKS\MKS\cv05\cv5\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv5.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv5.elf
+ 
+arm-none-eabi-size   cv5.elf 
+arm-none-eabi-objdump -h -S  cv5.elf  > "cv5.list"
+   text	   data	    bss	    dec	    hex	filename
+  15528	    112	   2432	  18072	   4698	cv5.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv5.list
+ 
+17:12:38 **** Incremental Build of configuration Debug for project cv5 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'uart_process_command':
+../Core/Src/main.c:89:166: error: expected expression before ')' token
+   89 |                 printf("LED1: %3s; LED2: %3s\n", HAL_GPIO_ReadPin(LED1_GPIO_Port, LED1_Pin) ? "ON": "OFF", HAL_GPIO_ReadPin(LED2_GPIO_Port, LED2_Pin) ? "ON": "OFF", );
+      |                                                                                                                                                                      ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+17:13:53 **** Incremental Build of configuration Debug for project cv5 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv5.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\xknobm00\MKS\MKS\cv05\cv5\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv5.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv5.elf
+ 
+arm-none-eabi-size   cv5.elf 
+arm-none-eabi-objdump -h -S  cv5.elf  > "cv5.list"
+   text	   data	    bss	    dec	    hex	filename
+  15728	    112	   2432	  18272	   4760	cv5.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv5.list
+ 
+17:14:08 **** Incremental Build of configuration Debug for project cv5 ****
+make -j4 all 
+arm-none-eabi-size   cv5.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15728	    112	   2432	  18272	   4760	cv5.elf
+Finished building: default.size.stdout
+ 
+17:15:42 **** Incremental Build of configuration Debug for project cv5 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv5.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\xknobm00\MKS\MKS\cv05\cv5\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv5.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv5.elf
+ 
+arm-none-eabi-size   cv5.elf 
+arm-none-eabi-objdump -h -S  cv5.elf  > "cv5.list"
+   text	   data	    bss	    dec	    hex	filename
+  15736	    112	   2432	  18280	   4768	cv5.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv5.list
+ 
+17:18:09 **** Incremental Build of configuration Debug for project cv5 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv5.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\xknobm00\MKS\MKS\cv05\cv5\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv5.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv5.elf
+ 
+arm-none-eabi-size   cv5.elf 
+arm-none-eabi-objdump -h -S  cv5.elf  > "cv5.list"
+   text	   data	    bss	    dec	    hex	filename
+  15740	    112	   2432	  18284	   476c	cv5.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv5.list
+ 
+17:19:28 **** Incremental Build of configuration Debug for project cv5 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv5.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\xknobm00\MKS\MKS\cv05\cv5\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv5.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv5.elf
+ 
+arm-none-eabi-size   cv5.elf 
+arm-none-eabi-objdump -h -S  cv5.elf  > "cv5.list"
+   text	   data	    bss	    dec	    hex	filename
+  15740	    112	   2432	  18284	   476c	cv5.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv5.list
+ 
+17:19:42 **** Incremental Build of configuration Debug for project cv5 ****
+make -j4 all 
+arm-none-eabi-size   cv5.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15740	    112	   2432	  18284	   476c	cv5.elf
+Finished building: default.size.stdout
+ 
