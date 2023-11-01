@@ -1,10 +1,10 @@
-15:49:45 **** Incremental Build of configuration Debug for project cv6 ****
+18:06:07 **** Incremental Build of configuration Debug for project cv6 ****
 make -j4 all 
 arm-none-eabi-size   cv6.elf 
    text	   data	    bss	    dec	    hex	filename
-  11308	     20	   1764	  13092	   3324	cv6.elf
+  12704	     20	   1764	  14488	   3898	cv6.elf
 Finished building: default.size.stdout
  
 
-15:49:45 Build Finished. 0 errors, 0 warnings. (took 316ms)
+18:06:08 Build Finished. 0 errors, 0 warnings. (took 312ms)
 
