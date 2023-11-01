@@ -1548,3 +1548,4 @@
 2023-11-01 18:06:03,001 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 1755mS.
 2023-11-01 18:06:03,002 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
 2023-11-01 18:06:03,004 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2023-11-01 18:08:26,913 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
