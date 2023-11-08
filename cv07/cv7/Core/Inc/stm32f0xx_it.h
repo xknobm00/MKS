@@ -48,6 +48,7 @@
 /* Exported functions prototypes ---------------------------------------------*/
 void NMI_Handler(void);
 void HardFault_Handler(void);
+void DMA1_Channel4_5_IRQHandler(void);
 void TIM14_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 
