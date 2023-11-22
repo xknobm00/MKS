@@ -65,9 +65,11 @@ int main(void) {
 	char password_stored[20]="1234";
 	char input[20];
 
+
 	PRINTF("\r\nEnter password: ");
 
 	SCANF("%s",input);
+	DWT1=DWT->CYCCNT;
 
 	status = strcmp(input, password_stored);
 
@@ -78,9 +80,6 @@ int main(void) {
 		{PRINTF("\r\ninput invalid");}
 
 
-
-	DWT1=DWT->CYCCNT;
-	PRINTF("HELLO");
 	DWT2=DWT->CYCCNT;
 	PRINTF("\r\nCycles in function: %d", DWT2-DWT1);
 
