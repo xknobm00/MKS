@@ -527,7 +527,7 @@ int main(void)
  800060e:	481f      	ldr	r0, [pc, #124]	; (800068c <main+0x98>)
  8000610:	f001 fd6c 	bl	80020ec <HAL_TIM_Base_Start_IT>
 
-  static const int8_t code[] = {7,9,3,2,12};
+  static const int8_t code[] = {1,2,3,4,12};
   uint8_t pos = 0;
  8000614:	2300      	movs	r3, #0
  8000616:	71fb      	strb	r3, [r7, #7]

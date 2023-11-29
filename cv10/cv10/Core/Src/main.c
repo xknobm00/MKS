@@ -98,7 +98,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim3);
 
-  static const int8_t code[] = {7,9,3,2,12};
+  static const int8_t code[] = {1,2,3,4,12};
   uint8_t pos = 0;
 
   /* USER CODE END 2 */
@@ -107,38 +107,34 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+		if (key != -1) {
+			printf("stisknuto: %2d, ", key);
 
+			if (key == code[pos]) {
+				pos++;
+				printf("pos = %d\n", pos);
 
-	  if(key != -1){
-		  printf("stisknuto: %2d, ", key);
+				if (pos == sizeof(code)) {
+					HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
+					pos = 0;
+					printf("spravne heslo \n");
+				}
 
-		  if (key == code[pos]) {
-			  pos++;
-			  printf("pos = %d\n", pos);
+			} else {
+				pos = 0;
+				printf("pos = %d\n", pos);
+			}
 
-			  if(pos >= sizeof(code)){
-				  HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
-				  pos = 0;
-				  printf("spravne heslo \n");
-			  }
+			HAL_Delay(300);
+			key = -1;
+		}
 
-		  }
-		  else{
-			  pos = 0;
-			  printf("pos = %d\n", pos);
-		  }
+		/* USER CODE END WHILE */
 
-		  HAL_Delay(300);
-		  key = -1;
-	  }
-
-
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-	//  HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
-	//  HAL_Delay(250);
-  }
+		/* USER CODE BEGIN 3 */
+		//  HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
+		//  HAL_Delay(250);
+	}
   /* USER CODE END 3 */
 }
 
