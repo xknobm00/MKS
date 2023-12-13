@@ -71,6 +71,7 @@ extern void tcpecho_init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
 static void telnet_byte_available(uint8_t c, struct netconn *conn)
 {
  static uint16_t cnt;
