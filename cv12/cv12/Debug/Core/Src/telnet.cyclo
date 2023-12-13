@@ -1,0 +1,2 @@
+../Core/Src/telnet.c:46:13:telnet_thread	6
+../Core/Src/telnet.c:105:6:telnet_init	1

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;cv12/Core/Inc/fsdata_custom.c&apos; to &apos;fsdata.c&apos;" description="Rename resource &apos;fsdata_custom.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/fsdata_custom.c" name="fsdata.c" stamp="1702481244434" updateReferences="true"/>
+</session>
